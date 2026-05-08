@@ -1,6 +1,6 @@
 # drone-attacks-latin-america
 Analysis of drone weaponization by non-state armed groups in Latin America (2021–2026)
-# Drone Weaponization by Non-State Armed Groups in Latin America (2021–2026)
+# From Ukraine to the Favelas: Drone Weaponization by Non-State Armed Groups in Latin America (2021–2026)
 
 ## Overview
 This project maps and analyzes the use of weaponized drones by non-state armed groups 
