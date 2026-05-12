@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_91de8299999caac4a140361a8c8a5721 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 40px; left: 40px; z-index: 1000;
+     background-color: white; padding: 12px; border-radius: 8px;
+     border: 1px solid grey; font-size: 13px;">
+    <b>Target category</b><br>
+    <span style="color:red;">●</span> Security forces<br>
+    <span style="color:orange;">●</span> Rival faction<br>
+    <span style="color:goldenrod;">●</span> Civilian population<br>
+    <span style="color:purple;">●</span> Infrastructure
+</div>
+    
+            <div class="folium-map" id="map_91de8299999caac4a140361a8c8a5721" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_91de8299999caac4a140361a8c8a5721 = L.map(
+                "map_91de8299999caac4a140361a8c8a5721",
+                {
+                    center: [-5.0, -70.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_01b14c16a219fb5d9c5ec98d0b30c52f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_01b14c16a219fb5d9c5ec98d0b30c52f.addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+            var circle_marker_2c129df71847b24711b00165a84a37f0 = L.circleMarker(
+                [-22.9110137, -43.2093727],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_a254c7a82ff99839da1390ea891566b8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c7c0d5c05debf0720a72d32f95b0ca59 = $(`<div id="html_c7c0d5c05debf0720a72d32f95b0ca59" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Terceiro Comando Puro (TCP)<br>         <b>Country:</b> Brasil<br>         <b>Location:</b> Rio de Janeiro<br>         <b>Year:</b> 2024<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Drone FPV com explosivo lançado contra ponto de venda de drogas no Complexo do Quitungo<br>         <b>Source:</b> <a href="https://g1.globo.com/rj/rio-de-janeiro/noticia/2024/07/09/como-funciona-drone-que-lancou-granada-em-favela-do-rio.ghtml" target="_blank">G1</a>         </div>`)[0];
+                popup_a254c7a82ff99839da1390ea891566b8.setContent(html_c7c0d5c05debf0720a72d32f95b0ca59);
+            
+        
+
+        circle_marker_2c129df71847b24711b00165a84a37f0.bindPopup(popup_a254c7a82ff99839da1390ea891566b8)
+        ;
+
+        
+    
+    
+            var circle_marker_98dca9901babfbc03c7b66fef0fcf70a = L.circleMarker(
+                [-22.9110137, -43.2093727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_df54c2e35f74fc65d6aa0ac4a12d0d64 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b287e137115d17a661ca76f415ab3f2b = $(`<div id="html_b287e137115d17a661ca76f415ab3f2b" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Comando Vermelho<br>         <b>Country:</b> Brasil<br>         <b>Location:</b> Rio de Janeiro<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drones com bombas usados contra equipe da CORE durante Operação Contenção no Complexo da Penha<br>         <b>Source:</b> <a href="https://www.gazetadopovo.com.br/brasil/criminosos-granadas-drones-policiais-operacao-rj/" target="_blank">Gazeta do Povo</a>         </div>`)[0];
+                popup_df54c2e35f74fc65d6aa0ac4a12d0d64.setContent(html_b287e137115d17a661ca76f415ab3f2b);
+            
+        
+
+        circle_marker_98dca9901babfbc03c7b66fef0fcf70a.bindPopup(popup_df54c2e35f74fc65d6aa0ac4a12d0d64)
+        ;
+
+        
+    
+    
+            var circle_marker_a986d64aca078a346ee7eb8078d495eb = L.circleMarker(
+                [-22.9110137, -43.2093727],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_86f3ba900f922738f9b7b9afa9f0dc87 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_497f18252959148e2210e8af74f13cad = $(`<div id="html_497f18252959148e2210e8af74f13cad" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Comando Vermelho<br>         <b>Country:</b> Brasil<br>         <b>Location:</b> Rio de Janeiro<br>         <b>Year:</b> 2026<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drones foram usados para lançar granadas contra PMs em Gardênia Azul e Vila Sapê<br>         <b>Source:</b> <a href="https://www.instagram.com/reels/DWzKv4hlD4_/" target="_blank">Record Rio</a>         </div>`)[0];
+                popup_86f3ba900f922738f9b7b9afa9f0dc87.setContent(html_497f18252959148e2210e8af74f13cad);
+            
+        
+
+        circle_marker_a986d64aca078a346ee7eb8078d495eb.bindPopup(popup_86f3ba900f922738f9b7b9afa9f0dc87)
+        ;
+
+        
+    
+    
+            var circle_marker_fc6c384e07e3ca60efba2401867d2c61 = L.circleMarker(
+                [-22.9110137, -43.2093727],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_e39183386e032b5daf26c5f67a021789 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_35e446cff2948a726dcfc38d72c9ba19 = $(`<div id="html_35e446cff2948a726dcfc38d72c9ba19" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Comando Vermelho<br>         <b>Country:</b> Brasil<br>         <b>Location:</b> Rio de Janeiro<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Drones usados para monitorar e planejar ataque à milícia de Jardim Bangu<br>         <b>Source:</b> <a href="https://www.bbc.com/portuguese/articles/c1j8n41317xo" target="_blank">BBC</a>         </div>`)[0];
+                popup_e39183386e032b5daf26c5f67a021789.setContent(html_35e446cff2948a726dcfc38d72c9ba19);
+            
+        
+
+        circle_marker_fc6c384e07e3ca60efba2401867d2c61.bindPopup(popup_e39183386e032b5daf26c5f67a021789)
+        ;
+
+        
+    
+    
+            var circle_marker_3d6cf5afb7bdce080d82769a81572b8e = L.circleMarker(
+                [-22.9110137, -43.2093727],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_1837824eebe10bdcb8923e19c2d70858 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_258d31d832babad43c6ae8232b704278 = $(`<div id="html_258d31d832babad43c6ae8232b704278" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Terceiro Comando Puro (TCP)<br>         <b>Country:</b> Brasil<br>         <b>Location:</b> Rio de Janeiro<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Drones com granadas foram usados contra a comunidade da Congonha, em Turiaçu<br>         <b>Source:</b> <a href="https://cbn.globo.com/rio-de-janeiro/noticia/2025/06/16/video-criminosos-usam-drone-para-lancar-explosivo-sobre-criancas-perto-de-quadra-em-madureira-zona-norte-do-rio.ghtml" target="_blank">CBN</a>         </div>`)[0];
+                popup_1837824eebe10bdcb8923e19c2d70858.setContent(html_258d31d832babad43c6ae8232b704278);
+            
+        
+
+        circle_marker_3d6cf5afb7bdce080d82769a81572b8e.bindPopup(popup_1837824eebe10bdcb8923e19c2d70858)
+        ;
+
+        
+    
+    
+            var circle_marker_11da3b2ed931b12ba218da3a937f16c0 = L.circleMarker(
+                [-5.3264703, -39.7156073],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_8a83699387b87f2a6e7f36b857fe6e9e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_922330cdf6e803047da07f2555480fb4 = $(`<div id="html_922330cdf6e803047da07f2555480fb4" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Comando Vermelho<br>         <b>Country:</b> Brasil<br>         <b>Location:</b> Ceará<br>         <b>Year:</b> 2026<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Drone com granada lançado na comunidade do Brejo durante disputas em Fortaleza<br>         <b>Source:</b> <a href="https://mais.opovo.com.br/jornal/cidades/2026/04/14/faccoes-utilizam-drones-para-lancar-granadas-em-comunidades-de-fortaleza.html" target="_blank">OPovo</a>         </div>`)[0];
+                popup_8a83699387b87f2a6e7f36b857fe6e9e.setContent(html_922330cdf6e803047da07f2555480fb4);
+            
+        
+
+        circle_marker_11da3b2ed931b12ba218da3a937f16c0.bindPopup(popup_8a83699387b87f2a6e7f36b857fe6e9e)
+        ;
+
+        
+    
+    
+            var circle_marker_b60c4b5b2a164fab9169487f556752db = L.circleMarker(
+                [-5.3264703, -39.7156073],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_5aa385b7e79300b9518214b84c8004d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_adc9244395248b5fbb49d513f129ce95 = $(`<div id="html_adc9244395248b5fbb49d513f129ce95" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Comando Vermelho<br>         <b>Country:</b> Brasil<br>         <b>Location:</b> Ceará<br>         <b>Year:</b> 2026<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Drone com granada lançado na comunidade do São Miguel durante disputas em Fortaleza<br>         <b>Source:</b> <a href="https://mais.opovo.com.br/jornal/cidades/2026/04/14/faccoes-utilizam-drones-para-lancar-granadas-em-comunidades-de-fortaleza.html" target="_blank">OPovo</a>         </div>`)[0];
+                popup_5aa385b7e79300b9518214b84c8004d9.setContent(html_adc9244395248b5fbb49d513f129ce95);
+            
+        
+
+        circle_marker_b60c4b5b2a164fab9169487f556752db.bindPopup(popup_5aa385b7e79300b9518214b84c8004d9)
+        ;
+
+        
+    
+    
+            var circle_marker_c0c599a134338600f979ea2deca38433 = L.circleMarker(
+                [19.207098, -101.878113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_a707ddc34921108f6c5d5aa557ac438b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cc1449f4e271ee6147eeaba7e0b2ddf1 = $(`<div id="html_cc1449f4e271ee6147eeaba7e0b2ddf1" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Jalisco New Generation Cartel (CJNG)<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Michoacán<br>         <b>Year:</b> 2021<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drones com explosivos lançados conta policiais em disputa<br>         <b>Source:</b> <a href="https://www.bbc.com/news/world-latin-america-56814501" target="_blank">BBC</a>         </div>`)[0];
+                popup_a707ddc34921108f6c5d5aa557ac438b.setContent(html_cc1449f4e271ee6147eeaba7e0b2ddf1);
+            
+        
+
+        circle_marker_c0c599a134338600f979ea2deca38433.bindPopup(popup_a707ddc34921108f6c5d5aa557ac438b)
+        ;
+
+        
+    
+    
+            var circle_marker_792040b5f289358b13e2e5bb7203dc45 = L.circleMarker(
+                [17.666667, -100.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_4f12f00673b5a4bccbcbbecd7b2e1e4e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_79033ce8a4f5d54d207222d114a81809 = $(`<div id="html_79033ce8a4f5d54d207222d114a81809" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> La Familia Michoacana<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Guerrero<br>         <b>Year:</b> 2024<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Drones com explosivos usados para atacar comunidade rural em disputa entre LFM e Los Taclos, forçando moradores a fugir<br>         <b>Source:</b> <a href="https://www.cbsnews.com/news/mexico-massacre-alleged-attack-cartel-drones-gunmen-deaths-injuries/" target="_blank">Border Report</a>         </div>`)[0];
+                popup_4f12f00673b5a4bccbcbbecd7b2e1e4e.setContent(html_79033ce8a4f5d54d207222d114a81809);
+            
+        
+
+        circle_marker_792040b5f289358b13e2e5bb7203dc45.bindPopup(popup_4f12f00673b5a4bccbcbbecd7b2e1e4e)
+        ;
+
+        
+    
+    
+            var circle_marker_b274d896cac381e043c3c85528db7811 = L.circleMarker(
+                [19.207098, -101.878113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_3a85473a61ad52d80ec2ab6589c65ec7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0fa4879252e4431520d6a25b8a0624e8 = $(`<div id="html_0fa4879252e4431520d6a25b8a0624e8" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Não identificado<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Michoacán<br>         <b>Year:</b> 2024<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drones com explosivos usados para atacar helicóptero do exército mexicano<br>         <b>Source:</b> <a href="https://insightcrime.org/news/criminal-groups-mexico-improvised-explosive-devices/" target="_blank">InSightCrime</a>         </div>`)[0];
+                popup_3a85473a61ad52d80ec2ab6589c65ec7.setContent(html_0fa4879252e4431520d6a25b8a0624e8);
+            
+        
+
+        circle_marker_b274d896cac381e043c3c85528db7811.bindPopup(popup_3a85473a61ad52d80ec2ab6589c65ec7)
+        ;
+
+        
+    
+    
+            var circle_marker_4e2445864c3b92d0a2fde81f0927b86b = L.circleMarker(
+                [19.207098, -101.878113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_5fe064157a639d45ca60a8f50ba7251e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_540c9f687758df8ab8ce3c60e5876548 = $(`<div id="html_540c9f687758df8ab8ce3c60e5876548" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Jalisco New Generation Cartel (CJNG)<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Michoacán<br>         <b>Year:</b> 2024<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drone com explosivo foi plantado em estrada em Río Bravo, fronteira com Texas, e detonado por comboio militar mexicano<br>         <b>Source:</b> <a href="https://insightcrime.org/news/criminal-groups-mexico-improvised-explosive-devices/" target="_blank">InSightCrime</a>         </div>`)[0];
+                popup_5fe064157a639d45ca60a8f50ba7251e.setContent(html_540c9f687758df8ab8ce3c60e5876548);
+            
+        
+
+        circle_marker_4e2445864c3b92d0a2fde81f0927b86b.bindPopup(popup_5fe064157a639d45ca60a8f50ba7251e)
+        ;
+
+        
+    
+    
+            var circle_marker_7563a1c54f65ef52f4807041f1e53149 = L.circleMarker(
+                [17.666667, -100.0],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_3074b33069b4144151264876b0958856 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d9f9303dc4e0d1416ff60cfa17bc203b = $(`<div id="html_d9f9303dc4e0d1416ff60cfa17bc203b" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> La Nueva Familia Michoacana<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Guerrero<br>         <b>Year:</b> 2024<br>         <b>Target:</b> Civilian population<br>         <b>Description:</b> Campanha de drones de 72 horas, mais de 40 explosivos lançados para intimidar e forçar deslocamento de civis<br>         <b>Source:</b> <a href="https://dronexl.co/2026/02/19/mexican-cartels-221-drone/" target="_blank">DroneXL</a>         </div>`)[0];
+                popup_3074b33069b4144151264876b0958856.setContent(html_d9f9303dc4e0d1416ff60cfa17bc203b);
+            
+        
+
+        circle_marker_7563a1c54f65ef52f4807041f1e53149.bindPopup(popup_3074b33069b4144151264876b0958856)
+        ;
+
+        
+    
+    
+            var circle_marker_8a8026ad6f13c18c08f40b815a77f3f8 = L.circleMarker(
+                [25.0000001, -107.5000001],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_493cc9e6b5bb993691a255eecffe126a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_411f3a20e5ad09be9c29412785aa0ddd = $(`<div id="html_411f3a20e5ad09be9c29412785aa0ddd" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Cartel de Sinaloa<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Sinaloa<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Civilian population<br>         <b>Description:</b> Ataques de drones com explosivos forçou deslocamento de residentes<br>         <b>Source:</b> <a href="https://www.cbsnews.com/news/drug-lord-el-chapo-hometown-hit-by-drone-attacks-residents-flee/" target="_blank">CBS News</a>         </div>`)[0];
+                popup_493cc9e6b5bb993691a255eecffe126a.setContent(html_411f3a20e5ad09be9c29412785aa0ddd);
+            
+        
+
+        circle_marker_8a8026ad6f13c18c08f40b815a77f3f8.bindPopup(popup_493cc9e6b5bb993691a255eecffe126a)
+        ;
+
+        
+    
+    
+            var circle_marker_50d727ccf38cc8fdf6a0553f874de46a = L.circleMarker(
+                [30.0338923, -115.1425107],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_a9b3199ca2308aaf2acbf951cd8f9247 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3599a2bcf3548833a8e1192580b3f163 = $(`<div id="html_3599a2bcf3548833a8e1192580b3f163" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Jalisco New Generation Cartel (CJNG)<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Baja California<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Ataque de drones carregados de explosivos atingiu as instalações da Procuradoria Geral do do Estado da Baixa California, em Tijuana<br>         <b>Source:</b> <a href="https://www.newsnationnow.com/us-news/immigration/border-coverage/cartels/cartel-uses-drones-to-drop-explosives-on-state-police-in-tijuana-warning-issued-for-americans/" target="_blank">News Nation Now</a>         </div>`)[0];
+                popup_a9b3199ca2308aaf2acbf951cd8f9247.setContent(html_3599a2bcf3548833a8e1192580b3f163);
+            
+        
+
+        circle_marker_50d727ccf38cc8fdf6a0553f874de46a.bindPopup(popup_a9b3199ca2308aaf2acbf951cd8f9247)
+        ;
+
+        
+    
+    
+            var circle_marker_86071b98d2928d61663727c92bd1c06a = L.circleMarker(
+                [28.5000001, -106.0000001],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_afc428f3fb4eb99815b2cf101c375e87 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a6da27731bab3df3fc842a22140718d = $(`<div id="html_0a6da27731bab3df3fc842a22140718d" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> La Línea<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Chihuahua<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Drones com explosivos foram usados em disputas de cartéis<br>         <b>Source:</b> <a href="https://militarnyi.com/en/news/cartels-in-mexico-use-drones-to-drop-explosives-in-ongoing-feud/" target="_blank">Militar NYI</a>         </div>`)[0];
+                popup_afc428f3fb4eb99815b2cf101c375e87.setContent(html_0a6da27731bab3df3fc842a22140718d);
+            
+        
+
+        circle_marker_86071b98d2928d61663727c92bd1c06a.bindPopup(popup_afc428f3fb4eb99815b2cf101c375e87)
+        ;
+
+        
+    
+    
+            var circle_marker_4701a117f00298da1717a4e341e74328 = L.circleMarker(
+                [19.207098, -101.878113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_0a14246084ad33e3ab3e48727d922d5b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b54cabbd6ad8713fe73d8b5235c6625 = $(`<div id="html_6b54cabbd6ad8713fe73d8b5235c6625" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Jalisco New Generation Cartel (CJNG)<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Michoacán<br>         <b>Year:</b> 2024<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Pela primeira vez, governo mexicano reconhece a morte de soldados por ataques de drones com explosivos. Detalhes não foram divulgados<br>         <b>Source:</b> <a href="https://www.foxnews.com/world/drug-cartels-using-bomb-dropping-drones-killed-mexican-army-soldiers-report" target="_blank">Fox News</a>         </div>`)[0];
+                popup_0a14246084ad33e3ab3e48727d922d5b.setContent(html_6b54cabbd6ad8713fe73d8b5235c6625);
+            
+        
+
+        circle_marker_4701a117f00298da1717a4e341e74328.bindPopup(popup_0a14246084ad33e3ab3e48727d922d5b)
+        ;
+
+        
+    
+    
+            var circle_marker_b992f53dabde8ef90c2fac02dd292221 = L.circleMarker(
+                [9.3333415, -73.5000086],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_ddc393d5e68750066139e1ba77439a95 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7879211067acaf5fe7cbc87867b4e095 = $(`<div id="html_7879211067acaf5fe7cbc87867b4e095" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Ejército de Liberación Nacional (ELN)<br>         <b>Country:</b> Colômbia<br>         <b>Location:</b> Cesar<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drones com explosivos usados para atacar base militar colombiana em Aguachica<br>         <b>Source:</b> <a href="https://edition.cnn.com/2025/12/19/americas/colombia-eln-guerrilla-drone-attack-military-base-latam-intl" target="_blank">CNN</a>         </div>`)[0];
+                popup_ddc393d5e68750066139e1ba77439a95.setContent(html_7879211067acaf5fe7cbc87867b4e095);
+            
+        
+
+        circle_marker_b992f53dabde8ef90c2fac02dd292221.bindPopup(popup_ddc393d5e68750066139e1ba77439a95)
+        ;
+
+        
+    
+    
+            var circle_marker_0c6b33591d94ccb07e16323991a343b0 = L.circleMarker(
+                [7.0000085, -75.5000086],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_e6308ae9d44da581aabe308a077ebcfd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5eb4c64587ae3e2cdc449f0d28f1bf4 = $(`<div id="html_d5eb4c64587ae3e2cdc449f0d28f1bf4" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> FARC<br>         <b>Country:</b> Colômbia<br>         <b>Location:</b> Antioquia<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drone com explosivos derruba helicóptero da polícia colombiana em Amalfi<br>         <b>Source:</b> <a href="https://www.bbc.com/news/articles/cwypw0xvdk5o" target="_blank">BBC</a>         </div>`)[0];
+                popup_e6308ae9d44da581aabe308a077ebcfd.setContent(html_d5eb4c64587ae3e2cdc449f0d28f1bf4);
+            
+        
+
+        circle_marker_0c6b33591d94ccb07e16323991a343b0.bindPopup(popup_e6308ae9d44da581aabe308a077ebcfd)
+        ;
+
+        
+    
+    
+            var circle_marker_0f07e320cbb251b8311e933777c2b316 = L.circleMarker(
+                [8.4417924, -73.0492505],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_e4ed664a5d9d97bc92c806c10ced5d36 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8406dd6a8dd7f6397d88696ad0efe1b4 = $(`<div id="html_8406dd6a8dd7f6397d88696ad0efe1b4" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Ejército de Liberación Nacional (ELN)<br>         <b>Country:</b> Colômbia<br>         <b>Location:</b> Norte de Santander<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drones comerciais modificados com explosivos foram usados para atacar uma patrulha militar em El Carmen<br>         <b>Source:</b> <a href="https://apnews.com/article/colombia-drone-attack-eln-catatumbo-61768f71290d2604a2d123d017cb18b4" target="_blank">AP News</a>         </div>`)[0];
+                popup_e4ed664a5d9d97bc92c806c10ced5d36.setContent(html_8406dd6a8dd7f6397d88696ad0efe1b4);
+            
+        
+
+        circle_marker_0f07e320cbb251b8311e933777c2b316.bindPopup(popup_e4ed664a5d9d97bc92c806c10ced5d36)
+        ;
+
+        
+    
+    
+            var circle_marker_8cac96954ad40808bfacdb62459781f6 = L.circleMarker(
+                [2.715645, -76.662665],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_87c855bc1ff284b3a1740d0811eb6fce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0038f5453085abba5d6dc1b551bff37f = $(`<div id="html_0038f5453085abba5d6dc1b551bff37f" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> FARC<br>         <b>Country:</b> Colômbia<br>         <b>Location:</b> Cauca<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Infrastructure<br>         <b>Description:</b> Drones com explosivos destroem hospital de campanha em El Plateado<br>         <b>Source:</b> <a href="https://www.lasillavacia.com/en-vivo/atacaron-con-drones-y-explosivos-al-hospital-de-campana-en-el-plateado-cauca/" target="_blank">La Silla Vacía</a>         </div>`)[0];
+                popup_87c855bc1ff284b3a1740d0811eb6fce.setContent(html_0038f5453085abba5d6dc1b551bff37f);
+            
+        
+
+        circle_marker_8cac96954ad40808bfacdb62459781f6.bindPopup(popup_87c855bc1ff284b3a1740d0811eb6fce)
+        ;
+
+        
+    
+    
+            var circle_marker_5a82af8b1c03b2b6b3fc86a62b36223a = L.circleMarker(
+                [2.715645, -76.662665],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_c880d1efe99601c68eaf683f2e84bdf3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5bed0a13412d88189056f99225358aed = $(`<div id="html_5bed0a13412d88189056f99225358aed" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> FARC<br>         <b>Country:</b> Colômbia<br>         <b>Location:</b> Cauca<br>         <b>Year:</b> 2025<br>         <b>Target:</b> Civilian population<br>         <b>Description:</b> Drones com explosivos atingem área residencial em El Plateado, em meio a escalada de conflito<br>         <b>Source:</b> <a href="https://www.eltiempo.com/colombia/otras-ciudades/segundo-ataque-con-drones-cargados-de-explosivos-en-menos-de-24-horas-en-el-plateado-cauca-3428237" target="_blank">El Tiempo</a>         </div>`)[0];
+                popup_c880d1efe99601c68eaf683f2e84bdf3.setContent(html_5bed0a13412d88189056f99225358aed);
+            
+        
+
+        circle_marker_5a82af8b1c03b2b6b3fc86a62b36223a.bindPopup(popup_c880d1efe99601c68eaf683f2e84bdf3)
+        ;
+
+        
+    
+    
+            var circle_marker_4e5592ce825e48b16d3a72dd1149875d = L.circleMarker(
+                [2.715645, -76.662665],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_25518ed4d979be0f8a32d0025210ceaa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_51c37408e73c3e1ba18d24ab303fe2d9 = $(`<div id="html_51c37408e73c3e1ba18d24ab303fe2d9" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Estado Mayor Central (EMC)<br>         <b>Country:</b> Colômbia<br>         <b>Location:</b> Cauca<br>         <b>Year:</b> 2024<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Drones com granadas lançados contra soldados colombianos atingem criança de 10 anos em El Plateado<br>         <b>Source:</b> <a href="https://www.cbsnews.com/news/boy-killed-colombia-first-lethal-drone-attack/" target="_blank">CBS News</a>         </div>`)[0];
+                popup_25518ed4d979be0f8a32d0025210ceaa.setContent(html_51c37408e73c3e1ba18d24ab303fe2d9);
+            
+        
+
+        circle_marker_4e5592ce825e48b16d3a72dd1149875d.bindPopup(popup_25518ed4d979be0f8a32d0025210ceaa)
+        ;
+
+        
+    
+    
+            var circle_marker_ec54ae56c752ab8966f87da56080d207 = L.circleMarker(
+                [17.666667, -100.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_08dde2fc7b7b7275cf02d7ae365266c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_66cd6853f91984126cf6177d1ea779ac = $(`<div id="html_66cd6853f91984126cf6177d1ea779ac" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> La Familia Michoacana<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Guerrero<br>         <b>Year:</b> 2023<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Ataques de drones com explosivos atingiram Nuevo Poblado de Caracol, forçando o deslocamento de 600 moradores<br>         <b>Source:</b> <a href="https://insightcrime.org/news/mexico-drone-attacks-spike-after-cjng-familia-michoacana-alliance/#:~:text=Mexico%20Drone%20Attacks%20Spike%20After,Staging%20Ground%20for%20Drone%20Warfare" target="_blank">InSightCrime</a>         </div>`)[0];
+                popup_08dde2fc7b7b7275cf02d7ae365266c3.setContent(html_66cd6853f91984126cf6177d1ea779ac);
+            
+        
+
+        circle_marker_ec54ae56c752ab8966f87da56080d207.bindPopup(popup_08dde2fc7b7b7275cf02d7ae365266c3)
+        ;
+
+        
+    
+    
+            var circle_marker_0fd63d196c7fe7cc0f1874fb93f315b9 = L.circleMarker(
+                [17.666667, -100.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_a9ab32cf9a2e9ff04ccfb05a5020b943 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_daafe6e38fad314e7edba58e12b8fce9 = $(`<div id="html_daafe6e38fad314e7edba58e12b8fce9" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> La Familia Michoacana<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Guerrero<br>         <b>Year:</b> 2023<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Ataques de drones com explosivos em cidades estratégicas em Nuevo Balsas<br>         <b>Source:</b> <a href="https://suracapulco.mx/impreso/2/con-drones-que-lanzan-explosivos-ataca-la-fm-siete-pueblos-cerca-de-nuevo-balsas-denuncian/" target="_blank">El Sur </a>         </div>`)[0];
+                popup_a9ab32cf9a2e9ff04ccfb05a5020b943.setContent(html_daafe6e38fad314e7edba58e12b8fce9);
+            
+        
+
+        circle_marker_0fd63d196c7fe7cc0f1874fb93f315b9.bindPopup(popup_a9ab32cf9a2e9ff04ccfb05a5020b943)
+        ;
+
+        
+    
+    
+            var circle_marker_de2c795bfa9edb2e0320daa32c90da0a = L.circleMarker(
+                [20.3333331, -103.6666671],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_309d1835d84d046330e6bd814fa7be4b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_00a8f4f58526ee556dac860b4496e573 = $(`<div id="html_00a8f4f58526ee556dac860b4496e573" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Jalisco New Generation Cartel (CJNG)<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Jalisco<br>         <b>Year:</b> 2022<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Ataques de drones com explosivos atingem polícia municipal<br>         <b>Source:</b> <a href="https://www.vice.com/en/article/mexico-cjng-airplane-drones-jalisco-police/" target="_blank">VICE</a>         </div>`)[0];
+                popup_309d1835d84d046330e6bd814fa7be4b.setContent(html_00a8f4f58526ee556dac860b4496e573);
+            
+        
+
+        circle_marker_de2c795bfa9edb2e0320daa32c90da0a.bindPopup(popup_309d1835d84d046330e6bd814fa7be4b)
+        ;
+
+        
+    
+    
+            var circle_marker_f38c7bd6aa350552b5e99552a6a13b8e = L.circleMarker(
+                [17.666667, -100.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_c21330d12df8ef94c7bd0c14d97c8b28 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c4bc7db04bf7a9053687e7c95a762f4 = $(`<div id="html_9c4bc7db04bf7a9053687e7c95a762f4" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Los Ardillos<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Guerrero<br>         <b>Year:</b> 2022<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Ataques de drones com granadas contra a Buenavista de la Salud Community Police HQ<br>         <b>Source:</b> <a href="https://reliefweb.int/report/mexico/acled-regional-overview-mexico-central-america-and-caribbean-2-8-july-2022" target="_blank">ACLED</a>         </div>`)[0];
+                popup_c21330d12df8ef94c7bd0c14d97c8b28.setContent(html_9c4bc7db04bf7a9053687e7c95a762f4);
+            
+        
+
+        circle_marker_f38c7bd6aa350552b5e99552a6a13b8e.bindPopup(popup_c21330d12df8ef94c7bd0c14d97c8b28)
+        ;
+
+        
+    
+    
+            var circle_marker_023f62b6068c4225758d732da8634f37 = L.circleMarker(
+                [19.207098, -101.878113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_1fdae416b1810a1d427d516485ecd489 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_43d99c7dcda5dcc131f13449d965772d = $(`<div id="html_43d99c7dcda5dcc131f13449d965772d" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Jalisco New Generation Cartel (CJNG)<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Michoacán<br>         <b>Year:</b> 2022<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Ataques de drones com explosivos atingem soldados mexicanos em Tepalcatepec<br>         <b>Source:</b> <a href="https://www.breitbart.com/border/2022/01/30/two-mexican-soldiers-injured-with-cartel-ied-drones-during-clash/" target="_blank">Breitbart</a>         </div>`)[0];
+                popup_1fdae416b1810a1d427d516485ecd489.setContent(html_43d99c7dcda5dcc131f13449d965772d);
+            
+        
+
+        circle_marker_023f62b6068c4225758d732da8634f37.bindPopup(popup_1fdae416b1810a1d427d516485ecd489)
+        ;
+
+        
+    
+    
+            var circle_marker_8fd4f57fec6f5cbecabd6b03d870a448 = L.circleMarker(
+                [19.207098, -101.878113],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_7c155ef57f0ad907f284b9098ad39ff1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_55bb65a7585769b640ef201c700f7564 = $(`<div id="html_55bb65a7585769b640ef201c700f7564" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Jalisco New Generation Cartel (CJNG)<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Michoacán<br>         <b>Year:</b> 2021<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Ataques de drones com explosivos contra gangues inimigas para controle de rotas de tráfico de drogas para os EUA<br>         <b>Source:</b> <a href="https://www.newsbreak.com/news/2267957916976-like-a-flying-ant-an-operative-describes-how-mexico-s-cartels-use-drones-to-attack-enemies-and-smuggle-drugs" target="_blank">Business Insider</a>         </div>`)[0];
+                popup_7c155ef57f0ad907f284b9098ad39ff1.setContent(html_55bb65a7585769b640ef201c700f7564);
+            
+        
+
+        circle_marker_8fd4f57fec6f5cbecabd6b03d870a448.bindPopup(popup_7c155ef57f0ad907f284b9098ad39ff1)
+        ;
+
+        
+    
+    
+            var circle_marker_35a419190b1b861509d2d04d7a97e912 = L.circleMarker(
+                [19.207098, -101.878113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_f97c39a237d240d720be35bff1dc9a78 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b29659f55e1d3d85998f0d1a99d72aea = $(`<div id="html_b29659f55e1d3d85998f0d1a99d72aea" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> Jalisco New Generation Cartel (CJNG)<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Michoacán<br>         <b>Year:</b> 2021<br>         <b>Target:</b> Security forces<br>         <b>Description:</b> Ataques de drones com granadas atingem policiais em Aguililla<br>         <b>Source:</b> <a href="https://www.breitbart.com/border/2021/04/25/exclusive-photos-cartels-in-mexico-weaponized-drones-to-drop-ieds/" target="_blank">Breitbart</a>         </div>`)[0];
+                popup_f97c39a237d240d720be35bff1dc9a78.setContent(html_b29659f55e1d3d85998f0d1a99d72aea);
+            
+        
+
+        circle_marker_35a419190b1b861509d2d04d7a97e912.bindPopup(popup_f97c39a237d240d720be35bff1dc9a78)
+        ;
+
+        
+    
+    
+            var circle_marker_ca7dd766e8e92e0d3bbd4bafe8f0c776 = L.circleMarker(
+                [17.666667, -100.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_91de8299999caac4a140361a8c8a5721);
+        
+    
+        var popup_811010cb0adddcb3dab61f3aee3b7537 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c799d66a0df2a78d1226e5325497f7c4 = $(`<div id="html_c799d66a0df2a78d1226e5325497f7c4" style="width: 100.0%; height: 100.0%;">         <b>Group:</b> La Familia Michoacana<br>         <b>Country:</b> Mexico<br>         <b>Location:</b> Guerrero<br>         <b>Year:</b> 2023<br>         <b>Target:</b> Rival faction<br>         <b>Description:</b> Trinta e três drones com explosivos foram lançados contra a comunidade de El Caracol durante disputas entre cartéis<br>         <b>Source:</b> <a href="https://www.kxan.com/border-report/cartel-reportedly-drops-33-bombs-from-drones-in-guerrero/" target="_blank">KXAN</a>         </div>`)[0];
+                popup_811010cb0adddcb3dab61f3aee3b7537.setContent(html_c799d66a0df2a78d1226e5325497f7c4);
+            
+        
+
+        circle_marker_ca7dd766e8e92e0d3bbd4bafe8f0c776.bindPopup(popup_811010cb0adddcb3dab61f3aee3b7537)
+        ;
+
+        
+    
+</script>
+</html>
