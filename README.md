@@ -16,7 +16,7 @@ adoption follows a traceable diffusion pattern that accelerates significantly fr
 ## Data
 Incidents were manually collected from open sources including InSight Crime, 
 El Tiempo, Gazeta do Povo, and El Universal, among others. The dataset covers 
-29 documented incidents across three countries.
+30 documented incidents across three countries.
 
 ## Files
 - `incidentes_drones.xlsx` — incident database with sources
