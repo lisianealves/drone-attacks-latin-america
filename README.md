@@ -33,7 +33,7 @@ visualization. Geocoding was performed with geopy/Nominatim.
 ```bash
 pip install -r requirements.txt
 jupyter notebook 02_analysis.ipynb
-
+```
 
 ## Author
 Lisiane Alves dos Santos — security analyst
