@@ -28,5 +28,11 @@ El Tiempo, Gazeta do Povo, and El Universal, among others. The dataset covers
 This project uses Python (pandas, matplotlib, folium) for data analysis and 
 visualization. Geocoding was performed with geopy/Nominatim.
 
+## Reproducing the Analysis
+
+```bash
+pip install -r requirements.txt
+jupyter notebook 02_analysis.ipynb
+
 ## Author
 Lisiane Alves dos Santos — security analyst
