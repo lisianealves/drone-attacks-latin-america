@@ -1,22 +1,22 @@
-# drone-attacks-latin-america
-Analysis of drone weaponization by non-state armed groups in Latin America (2021–2026)
 # From Ukraine to the Favelas: Drone Weaponization by Non-State Armed Groups in Latin America (2021–2026)
 
 ## Overview
-This project maps and analyzes the use of weaponized drones by non-state armed groups 
-in Latin America, mostly Brazil, Mexico, and Colombia. It argues that drone 
-adoption follows a traceable diffusion pattern that accelerates significantly from 2024 onward.
+This project analyzes the growing use of weaponized commercial drones by non-state armed groups in Latin America between 2021 and 2026.
+Using manually collected OSINT data, the project identifies emerging regional diffusion patterns, operational trends, and target preferences across Brazil, Mexico, and Colombia.
 
 ## Key Findings
-- Security forces are the primary target, accounting for 15 of 30 documented incidents
-- Mexico was the pioneer, with documented attacks from 2021 onward
-- Brazil and Colombia appear in 2024, suggesting regional diffusion
-- Incidents nearly double between 2023 and 2024, and spike further in 2025
+- Security forces were the primary targets, representing 50% of documented incidents.
+- Mexico emerged as the earliest adopter of drone-based attacks, with incidents documented since 2021.
+- The appearance of incidents in Brazil and Colombia from 2024 onward suggests a regional diffusion process.
+- Incident frequency accelerated significantly after 2023, indicating growing operational normalization among armed groups.
 
 ## Data
 Incidents were manually collected from open sources including InSight Crime, 
 El Tiempo, Gazeta do Povo, and El Universal, among others. The dataset covers 
 30 documented incidents across three countries.
+
+## Limitations
+The dataset is based exclusively on publicly reported incidents and may underrepresent the true scale of drone weaponization in the region. Differences in media coverage, government transparency, and reporting standards between countries may affect incident visibility.
 
 ## Files
 - `incidentes_drones.xlsx` — incident database with sources
@@ -36,4 +36,4 @@ jupyter notebook 02_analysis.ipynb
 ```
 
 ## Author
-Lisiane Alves dos Santos — security analyst
+Lisiane Alves dos Santos — OSINT and security analysis researcher
