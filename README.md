@@ -36,4 +36,4 @@ jupyter notebook 02_analysis.ipynb
 ```
 
 ## Author
-Lisiane Alves dos Santos — OSINT and security analysis researcher
+Lisiane Alves dos Santos — geopolitical and security analyst
